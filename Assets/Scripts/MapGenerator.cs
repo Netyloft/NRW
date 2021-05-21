@@ -35,8 +35,8 @@ public class MapGenerator : MonoBehaviour
         seed = Random.Range(0, 500000);
         var r = DungeonMapGenerator(size.x + 5, size.y + 5, intencity);
 
-        r = ArrangeMineObjects(r, MapObjectType.Stone);
-        r = ArrangeMineObjects(r, MapObjectType.Iron);
+        r = ArrangeMineObjects(r, MapObjectType.Stone, StoneCount);
+        r = ArrangeMineObjects(r, MapObjectType.Iron, IronCount);
         
         _spawner.SpawnMap(r);
         
@@ -71,14 +71,14 @@ public class MapGenerator : MonoBehaviour
         return map;
     }
 
-    private MapObjectType[,] ArrangeMineObjects(MapObjectType[,] map, MapObjectType type)
+    private MapObjectType[,] ArrangeMineObjects(MapObjectType[,] map, MapObjectType type, int count)
     {
-        var count = 0;
+        var cou = 0;
 
         var xLen = map.GetLength(0);
         var yLen = map.GetLength(1);
         
-        while (count != StoneCount)
+        while (count != cou)
         {
             var x = Random.Range(0, xLen);
             var y = Random.Range(0, yLen);
@@ -86,7 +86,7 @@ public class MapGenerator : MonoBehaviour
             if (map[x, y] != MapObjectType.Graund) continue;
             
             map[x, y] = type;
-            count++;
+            cou++;
         }
         
         return map;
