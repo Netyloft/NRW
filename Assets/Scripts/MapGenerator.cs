@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class MapGenerator : MonoBehaviour
@@ -12,9 +13,9 @@ public class MapGenerator : MonoBehaviour
     public float zoom;
     public int seed;
     [Range(0, 1)] public float intencity;
-    
-    
-    
+
+    public int StoneCount;
+    public int IronCount;
     
     private MapSpawner _spawner;
 
@@ -26,12 +27,17 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         CreateNewMap();
+        GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     public void CreateNewMap()
     {
         seed = Random.Range(0, 500000);
         var r = DungeonMapGenerator(size.x + 5, size.y + 5, intencity);
+
+        r = ArrangeMineObjects(r, MapObjectType.Stone);
+        r = ArrangeMineObjects(r, MapObjectType.Iron);
+        
         _spawner.SpawnMap(r);
         
     }
@@ -65,5 +71,25 @@ public class MapGenerator : MonoBehaviour
         return map;
     }
 
+    private MapObjectType[,] ArrangeMineObjects(MapObjectType[,] map, MapObjectType type)
+    {
+        var count = 0;
+
+        var xLen = map.GetLength(0);
+        var yLen = map.GetLength(1);
+        
+        while (count != StoneCount)
+        {
+            var x = Random.Range(0, xLen);
+            var y = Random.Range(0, yLen);
+
+            if (map[x, y] != MapObjectType.Graund) continue;
+            
+            map[x, y] = type;
+            count++;
+        }
+        
+        return map;
+    }
     
 }

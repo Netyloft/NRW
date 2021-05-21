@@ -3,6 +3,8 @@
     public enum MapObjectType
     {
         Graund,
-        Tree
+        Tree,
+        Stone,
+        Iron
     }
 }
