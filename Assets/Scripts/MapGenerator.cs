@@ -33,18 +33,20 @@ public class MapGenerator : MonoBehaviour
     public void CreateNewMap()
     {
         seed = Random.Range(0, 500000);
-        var r = DungeonMapGenerator(size.x + 5, size.y + 5, intencity);
+        DungeonMapGenerator(size.x + 5, size.y + 5, intencity);
 
-        r = ArrangeMineObjects(r, MapObjectType.Stone, StoneCount);
-        r = ArrangeMineObjects(r, MapObjectType.Iron, IronCount);
+        ArrangeMineObjects(MapObjectType.Stone, StoneCount);
+        ArrangeMineObjects(MapObjectType.Iron, IronCount);
         
-        _spawner.SpawnMap(r);
+        _spawner.SpawnMap();
         
     }
     
-    private MapObjectType[,] DungeonMapGenerator(int x, int y, float range)
+    private void DungeonMapGenerator(int x, int y, float range)
     {
-        var map = new MapObjectType[x, y];
+        MapController.instance.map = new MapObjectType[x, y];
+        MapController.instance.xLen = x;
+        MapController.instance.yLen = y;
 
         for (var i = 0; i < x; i++)
         {
@@ -54,42 +56,35 @@ public class MapGenerator : MonoBehaviour
 
                 if (i == 0 || j == 0 || i == x - 1 || j == y - 1)
                 {
-                    map[i, j] = MapObjectType.Tree;
+                    MapController.instance.map[i, j] = MapObjectType.Tree;
                     continue;
                 }
 
                 if (gr < range)
                 {
-                    map[i, j] = MapObjectType.Tree;
+                    MapController.instance.map[i, j] = MapObjectType.Tree;
                     continue;
                 }
                 
-                map[i, j] = MapObjectType.Graund;
+                MapController.instance.map[i, j] = MapObjectType.Graund;
             }
         }
-
-        return map;
     }
 
-    private MapObjectType[,] ArrangeMineObjects(MapObjectType[,] map, MapObjectType type, int count)
+    private void ArrangeMineObjects(MapObjectType type, int count)
     {
         var cou = 0;
 
-        var xLen = map.GetLength(0);
-        var yLen = map.GetLength(1);
-        
         while (count != cou)
         {
-            var x = Random.Range(0, xLen);
-            var y = Random.Range(0, yLen);
+            var x = Random.Range(0, MapController.instance.xLen);
+            var y = Random.Range(0, MapController.instance.yLen);
 
-            if (map[x, y] != MapObjectType.Graund) continue;
+            if (MapController.instance.map[x, y] != MapObjectType.Graund) continue;
             
-            map[x, y] = type;
+            MapController.instance.map[x, y] = type;
             cou++;
         }
-        
-        return map;
     }
     
 }

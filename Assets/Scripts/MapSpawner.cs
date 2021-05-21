@@ -15,28 +15,25 @@ public class MapSpawner : MonoBehaviour
     public GameObject Stone;
     public GameObject Irone;
 
-    public void SpawnMap(MapObjectType[,] map)
+    public void SpawnMap()
     {
-        var xLen = map.GetLength(0);
-        var yLen = map.GetLength(1);
-        
-        for (var i = 0; i < xLen; i++)
+        for (var i = 0; i < MapController.instance.xLen; i++)
         {
-            for (var j = 0; j < yLen; j++)
+            for (var j = 0; j < MapController.instance.yLen; j++)
             {
-                if (map[i, j] == MapObjectType.Tree)
+                if (MapController.instance.map[i, j] == MapObjectType.Tree)
                 {
                     var tree = Instantiate(Tree, new Vector3(i, 0, j), Quaternion.identity).transform;
                     tree.parent = Map.transform;
                 }
                 
-                if (map[i, j] == MapObjectType.Stone)
+                if (MapController.instance.map[i, j] == MapObjectType.Stone)
                 {
                     var tree = Instantiate(Stone, new Vector3(i, 0, j), Quaternion.identity).transform;
                     tree.parent = Map.transform;
                 }
                 
-                if (map[i, j] == MapObjectType.Iron)
+                if (MapController.instance.map[i, j] == MapObjectType.Iron)
                 {
                     var tree = Instantiate(Irone, new Vector3(i, 0, j), Quaternion.identity).transform;
                     tree.parent = Map.transform;
