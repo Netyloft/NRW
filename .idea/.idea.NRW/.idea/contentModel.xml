@@ -34,6 +34,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Building.cs" t="Include" />
+          <e p="BuildingsGrid.cs" t="Include" />
+          <e p="DayAndNightComtroller.cs" t="Include" />
           <e p="MapController.cs" t="Include" />
           <e p="MapGenerator.cs" t="Include" />
           <e p="MapObject.cs" t="Include" />
