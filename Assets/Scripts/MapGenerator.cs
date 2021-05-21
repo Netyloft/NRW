@@ -27,7 +27,7 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         CreateNewMap();
-        GetComponent<NavMeshSurface>().BuildNavMesh();
+        MapController.instance.Build();
     }
 
     public void CreateNewMap()

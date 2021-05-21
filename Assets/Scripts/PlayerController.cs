@@ -12,11 +12,10 @@ public class PlayerController : MonoBehaviour
         mainCamera = Camera.main;
         agent = GetComponent<NavMeshAgent>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
             RaycastHit hit;
             if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out hit))

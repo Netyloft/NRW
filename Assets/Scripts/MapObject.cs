@@ -5,6 +5,7 @@
         Graund,
         Tree,
         Stone,
-        Iron
+        Iron,
+        Building
     }
 }
