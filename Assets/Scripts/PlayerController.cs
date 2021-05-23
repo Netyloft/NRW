@@ -15,11 +15,13 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
             if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out hit))
             {
+                var h = hit.transform.gameObject.name;
+                Debug.Log(h);
                 agent.SetDestination(hit.point);
             }
         }

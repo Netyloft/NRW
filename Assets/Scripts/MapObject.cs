@@ -1,11 +1,18 @@
-﻿namespace DefaultNamespace
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MapObject : MonoBehaviour
 {
-    public enum MapObjectType
+    // Start is called before the first frame update
+    void Start()
     {
-        Graund,
-        Tree,
-        Stone,
-        Iron,
-        Building
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

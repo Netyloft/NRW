@@ -10,6 +10,7 @@ public class DayAndNightComtroller : MonoBehaviour
     [SerializeField, Range(1, 3600)] private float timeDayInSeconds = 60;
     [SerializeField, Range(0f, 1f)] private float timeProgress;
     [SerializeField] private Light directLight;
+    [SerializeField] private bool isFreezTime;
 
     private Vector3 defaultAngless;
     void Start()
@@ -19,7 +20,7 @@ public class DayAndNightComtroller : MonoBehaviour
     
     void Update()
     {
-        if (Application.isPlaying)
+        if (Application.isPlaying && !isFreezTime)
             timeProgress += Time.deltaTime / timeDayInSeconds;
 
         if (timeProgress > 1f)
@@ -28,6 +29,6 @@ public class DayAndNightComtroller : MonoBehaviour
         directLight.color = directionalLightGradient.Evaluate(timeProgress);
         RenderSettings.ambientLight = ambientLightGradient.Evaluate(timeProgress);
         
-        directLight.transform.localEulerAngles = new Vector3(360f * timeProgress - 90, defaultAngless.x, defaultAngless.z);
+        directLight.transform.localEulerAngles = new Vector3(360f * timeProgress - 45, defaultAngless.x, defaultAngless.z);
     }
 }
