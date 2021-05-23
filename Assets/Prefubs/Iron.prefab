@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6887776327062124843}
   - component: {fileID: 8593258758338232417}
   - component: {fileID: 5072418150543320309}
+  - component: {fileID: 8067788170894760376}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -82,6 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8067788170894760376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2387017126457109008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 1, z: 0.35}
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &6678179149206295241
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +107,8 @@ GameObject:
   - component: {fileID: 6333882009683544179}
   - component: {fileID: 3837696236132711848}
   - component: {fileID: 4376610665476360002}
-  m_Layer: 0
+  - component: {fileID: -8707367557087294811}
+  m_Layer: 6
   m_Name: Iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,8 +141,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.50645137, z: 0.1}
-  m_Center: {x: 0, y: 0.4532256, z: 0}
+  m_Size: {x: 0.9, y: 0.5, z: 0.9}
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!114 &4376610665476360002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +159,20 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &-8707367557087294811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6678179149206295241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12a6670b807fa0458b73b2379d7576c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
+  currentHp: 0
+  maxResources: 1000
+  currentResources: 0
+  type: 3

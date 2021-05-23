@@ -20,8 +20,23 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                var h = hit.transform.gameObject.name;
-                Debug.Log(h);
+                var h = hit.transform.gameObject;
+                
+
+                var g = h.GetComponent<MapObject>();
+
+                if (g != null)
+                {
+                    if (Vector3.Distance(transform.position, h.transform.position) <= 2.0f)
+                    {
+                        g.Mine(15);
+                        return;
+                    }
+                        
+
+                    
+                }
+                
                 agent.SetDestination(hit.point);
             }
         }
