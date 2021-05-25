@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44450867, g: 0.49400175, b: 0.573298, a: 1}
+  m_IndirectSpecularColor: {r: 0.4445095, g: 0.4940024, b: 0.57329893, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1017,7 +1017,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.42301872, y: -0.2694498, z: 0.13334493, w: 0.8547931}
+  m_LocalRotation: {x: 0.4230187, y: -0.26944974, z: 0.1333449, w: 0.8547931}
   m_LocalPosition: {x: 8.5, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1587,10 +1587,11 @@ GameObject:
   - component: {fileID: 1785394352}
   - component: {fileID: 1785394356}
   - component: {fileID: 1785394357}
+  - component: {fileID: 1785394358}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Enemy
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1706,6 +1707,22 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &1785394358
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785394351}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1796889569
 GameObject:
   m_ObjectHideFlags: 3
@@ -1862,7 +1879,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933759268}
-  m_LocalRotation: {x: 0.42301872, y: -0.2694498, z: 0.13334493, w: 0.8547931}
+  m_LocalRotation: {x: 0.4230187, y: -0.26944974, z: 0.1333449, w: 0.8547931}
   m_LocalPosition: {x: 8.5, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
