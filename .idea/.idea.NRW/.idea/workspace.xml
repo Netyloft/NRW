@@ -29,23 +29,33 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DayAndNightComtroller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6CD98968-4D0C-46E5-8E0C-E6F2DFD9AC5C/a0/5e7f2d8e/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingsGrid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6CD98968-4D0C-46E5-8E0C-E6F2DFD9AC5C/a0/5e7f2d8e/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ResourseCounter.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/NavMeshRebake.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DayAndNightComtroller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingsGrid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DayAndNightComtroller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NavMeshBakingDish.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ResourseCounter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InterfaceController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BulletTower.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tower.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TowerTrigger.cs" />
       </list>
     </option>
   </component>
@@ -101,6 +111,8 @@
       <workItem from="1621576064367" duration="5696000" />
       <workItem from="1621606990295" duration="528000" />
       <workItem from="1621607909382" duration="3580000" />
+      <workItem from="1621961237524" duration="5705000" />
+      <workItem from="1622006843727" duration="1671000" />
     </task>
     <servers />
   </component>

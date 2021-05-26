@@ -35,7 +35,7 @@ public class MapObject : MonoBehaviour
     {
         currentResources -= count;
         
-        InterfaceAndResourseController.instance.AddResource(type, count);
+        ResourseCounter.counter.ChangeResource(type, 10);
         
         if(currentResources <= 0)
             TakeAway();
@@ -43,7 +43,8 @@ public class MapObject : MonoBehaviour
 
     protected void TakeAway()
     {
-        //MapController.instance.Build();
+        gameObject.SetActive(false);
+        NavMeshBakingDish.BakingDish.Baking();
         Destroy(gameObject);
     }
 }

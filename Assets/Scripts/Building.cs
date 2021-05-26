@@ -1,9 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.AI;
 
 public class Building : MonoBehaviour
 {
     public Renderer MainRenderer;
     public Vector2Int Size = Vector2Int.one;
+
+    private NavMeshObstacle _navMeshObstacle;
+
+    private void Start()
+    {
+        _navMeshObstacle = GetComponent<NavMeshObstacle>();
+    }
 
     public void SetTransparent(bool available)
     {
@@ -20,6 +29,7 @@ public class Building : MonoBehaviour
     public void SetNormal()
     {
         MainRenderer.material.color = Color.white;
+        _navMeshObstacle.enabled = true;
     }
 
     private void OnDrawGizmos()

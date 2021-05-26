@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerTrigger : MonoBehaviour
@@ -11,6 +9,7 @@ public class TowerTrigger : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
+		
 		if (other.CompareTag("Enemy") && !lockTower)
 		{
 			tower.Target = other.gameObject.transform;

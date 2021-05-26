@@ -8,17 +8,19 @@ using Random = UnityEngine.Random;
 
 public class MapGenerator : MonoBehaviour
 {
-    public Vector2Int size;
-    public Vector2 offset;
-    public float zoom;
-    public int seed;
-    [Range(0, 1)] public float intencity;
+    [SerializeField] private Vector2Int _size;
+    [SerializeField] private Vector2 _offset;
+    [SerializeField] private float _zoom;
+    [SerializeField] private int _seed;
+    [SerializeField, Range(0, 1)] private float _intencity;
 
-    public int StoneCount;
-    public int IronCount;
+    [SerializeField] private int _stoneCountOnMap;
+    [SerializeField] private int _ironCountOnMap;
+    
+    
     
     private MapSpawner _spawner;
-
+    
     private void Awake()
     {
         _spawner = GetComponent<MapSpawner>();
@@ -27,16 +29,16 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         CreateNewMap();
-        MapController.instance.Build();
+        NavMeshBakingDish.BakingDish.Baking();
     }
 
     public void CreateNewMap()
     {
-        seed = Random.Range(0, 500000);
-        DungeonMapGenerator(size.x + 5, size.y + 5, intencity);
+        _seed = Random.Range(0, 500000);
+        DungeonMapGenerator(_size.x + 5, _size.y + 5, _intencity);
 
-        ArrangeMineObjects(MapObjectType.Stone, StoneCount);
-        ArrangeMineObjects(MapObjectType.Iron, IronCount);
+        ArrangeMineObjects(MapObjectType.Stone, _stoneCountOnMap);
+        ArrangeMineObjects(MapObjectType.Iron, _ironCountOnMap);
         
         _spawner.SpawnMap();
         
@@ -44,29 +46,29 @@ public class MapGenerator : MonoBehaviour
     
     private void DungeonMapGenerator(int x, int y, float range)
     {
-        MapController.instance.map = new MapObjectType[x, y];
-        MapController.instance.xLen = x;
-        MapController.instance.yLen = y;
+        GameMap.map = new MapObjectType[x, y];
+        GameMap.xLen = x;
+        GameMap.yLen = y;
 
         for (var i = 0; i < x; i++)
         {
             for (var j = 0; j < y; j++)
             {
-                var gr = Mathf.PerlinNoise((i + offset.x * seed + 5) / zoom, (j + offset.y * seed) / zoom);
+                var gr = Mathf.PerlinNoise((i + _offset.x * _seed + 5) / _zoom, (j + _offset.y * _seed) / _zoom);
 
                 if (i == 0 || j == 0 || i == x - 1 || j == y - 1)
                 {
-                    MapController.instance.map[i, j] = MapObjectType.Tree;
+                    GameMap.map[i, j] = MapObjectType.Tree;
                     continue;
                 }
 
                 if (gr < range)
                 {
-                    MapController.instance.map[i, j] = MapObjectType.Tree;
+                    GameMap.map[i, j] = MapObjectType.Tree;
                     continue;
                 }
                 
-                MapController.instance.map[i, j] = MapObjectType.Graund;
+                GameMap.map[i, j] = MapObjectType.Graund;
             }
         }
     }
@@ -77,12 +79,12 @@ public class MapGenerator : MonoBehaviour
 
         while (count != cou)
         {
-            var x = Random.Range(0, MapController.instance.xLen);
-            var y = Random.Range(0, MapController.instance.yLen);
+            var x = Random.Range(0, GameMap.xLen);
+            var y = Random.Range(0, GameMap.yLen);
 
-            if (MapController.instance.map[x, y] != MapObjectType.Graund) continue;
+            if (GameMap.map[x, y] != MapObjectType.Graund) continue;
             
-            MapController.instance.map[x, y] = type;
+            GameMap.map[x, y] = type;
             cou++;
         }
     }

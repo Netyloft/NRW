@@ -42,8 +42,8 @@ public class BuildingsGrid : MonoBehaviour
 
             bool available = true;
 
-            if (x < 0 || x > MapController.instance.xLen - flyingBuilding.Size.x) available = false;
-            if (y < 0 || y > MapController.instance.yLen - flyingBuilding.Size.y) available = false;
+            if (x < 0 || x > GameMap.xLen - flyingBuilding.Size.x) available = false;
+            if (y < 0 || y > GameMap.yLen - flyingBuilding.Size.y) available = false;
 
             if (available && IsPlaceTaken(x, y)) available = false;
 
@@ -63,7 +63,7 @@ public class BuildingsGrid : MonoBehaviour
         {
             for (int y = 0; y < flyingBuilding.Size.y; y++)
             {
-                if (MapController.instance.map[placeX + x, placeY + y] != MapObjectType.Graund) return true;
+                if (GameMap.map[placeX + x, placeY + y] != MapObjectType.Graund) return true;
             }
         }
 
@@ -76,7 +76,7 @@ public class BuildingsGrid : MonoBehaviour
         {
             for (int y = 0; y < flyingBuilding.Size.y; y++)
             {
-                MapController.instance.map[placeX + x, placeY + y] = MapObjectType.Building;
+                GameMap.map[placeX + x, placeY + y] = MapObjectType.Building;
             }
         }
         

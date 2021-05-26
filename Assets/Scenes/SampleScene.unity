@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4445095, g: 0.4940024, b: 0.57329893, a: 1}
+  m_IndirectSpecularColor: {r: 0.44450867, g: 0.49400175, b: 0.573298, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -635,9 +635,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 731902103}
+  - component: {fileID: 731902104}
   - component: {fileID: 731902102}
   m_Layer: 0
-  m_Name: DateTime
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,6 +732,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &731902104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731902101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930d1d9643b970e4483c34959981b24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WoodCount: 0
+  StoneCount: 0
+  IronCount: 0
 --- !u!1 &742741351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,9 +1251,8 @@ GameObject:
   - component: {fileID: 1192022002}
   - component: {fileID: 1192022005}
   - component: {fileID: 1192022004}
-  - component: {fileID: 1192022003}
-  - component: {fileID: 1192022006}
   - component: {fileID: 1192022007}
+  - component: {fileID: 1192022008}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -1261,26 +1276,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1192022003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192022001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24fb3eb29eeebd04d87475bbfb984a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createMultiMaterialMesh: 0
-  combineInactiveChildren: 0
-  deactivateCombinedChildren: 1
-  deactivateCombinedChildrenMeshRenderers: 0
-  generateUVMap: 0
-  destroyCombinedChildren: 0
-  folderPath: Prefabs/CombinedMeshes
-  meshFiltersToSkip: []
 --- !u!23 &1192022004
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1331,20 +1326,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192022001}
   m_Mesh: {fileID: 0}
---- !u!114 &1192022006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192022001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd395552b6f5054d82a9fb68c2631d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xLen: 0
-  yLen: 0
 --- !u!114 &1192022007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,6 +1355,18 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1192022008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192022001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb69a51ffd95174ca84bfe7bf9672ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1364306744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,9 +1563,6 @@ MonoBehaviour:
   WoodText: {fileID: 1982974293}
   StoneText: {fileID: 1119144568}
   IronText: {fileID: 643519049}
-  WoodCount: 0
-  StoneCount: 0
-  IronCount: 0
 --- !u!1 &1785394351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,10 +1577,9 @@ GameObject:
   - component: {fileID: 1785394352}
   - component: {fileID: 1785394356}
   - component: {fileID: 1785394357}
-  - component: {fileID: 1785394358}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Enemy
+  m_TagString: Player
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1707,22 +1696,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!54 &1785394358
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785394351}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1796889569
 GameObject:
   m_ObjectHideFlags: 3
@@ -2054,13 +2027,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7e4648c59a5494d86d1df8526976e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 50, y: 50}
-  offset: {x: 2.12, y: 1.84}
-  zoom: 5.25
-  seed: 39
-  intencity: 0.44
-  StoneCount: 10
-  IronCount: 10
+  _size: {x: 50, y: 50}
+  _offset: {x: 2.12, y: 1.84}
+  _zoom: 5.25
+  _seed: 0
+  _intencity: 0.44
+  _stoneCountOnMap: 20
+  _ironCountOnMap: 20
 --- !u!4 &1987140679
 Transform:
   m_ObjectHideFlags: 0
@@ -2087,7 +2060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60ae2ea99092bf4dbef31deac6febb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Map: {fileID: 1192022001}
+  WorldMap: {fileID: 1192022001}
   Graund: {fileID: 1093468318}
   GraundTile: {fileID: 8594176219795579021, guid: ac98e4aa5926ada41bd227fa0346fbae, type: 3}
   Tree: {fileID: 5881431086145997408, guid: 034c379099607f845b8c18c4adfbd7d3, type: 3}

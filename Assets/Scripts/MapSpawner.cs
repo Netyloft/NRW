@@ -6,45 +6,42 @@ using UnityEngine;
 
 public class MapSpawner : MonoBehaviour
 {
-    public GameObject Map;
+    public GameObject WorldMap;
     public GameObject Graund;
     
     public GameObject GraundTile;
-    public GameObject Tree;
     
+    public GameObject Tree;
     public GameObject Stone;
     public GameObject Irone;
 
     public void SpawnMap()
     {
-        for (var i = 0; i < MapController.instance.xLen; i++)
+        for (var i = 0; i < GameMap.xLen; i++)
         {
-            for (var j = 0; j < MapController.instance.yLen; j++)
+            for (var j = 0; j < GameMap.yLen; j++)
             {
-                if (MapController.instance.map[i, j] == MapObjectType.Tree)
+                if (GameMap.map[i, j] == MapObjectType.Tree)
                 {
                     var tree = Instantiate(Tree, new Vector3(i, 0, j), Quaternion.identity).transform;
-                    tree.parent = Map.transform;
+                    tree.parent = WorldMap.transform;
                 }
                 
-                if (MapController.instance.map[i, j] == MapObjectType.Stone)
+                if (GameMap.map[i, j] == MapObjectType.Stone)
                 {
                     var tree = Instantiate(Stone, new Vector3(i, 0, j), Quaternion.identity).transform;
-                    tree.parent = Map.transform;
+                    tree.parent = WorldMap.transform;
                 }
                 
-                if (MapController.instance.map[i, j] == MapObjectType.Iron)
+                if (GameMap.map[i, j] == MapObjectType.Iron)
                 {
                     var tree = Instantiate(Irone, new Vector3(i, 0, j), Quaternion.identity).transform;
-                    tree.parent = Map.transform;
+                    tree.parent = WorldMap.transform;
                 }
                 
                 var graund = Instantiate(GraundTile, new Vector3(i, 0, j), Quaternion.identity).transform;
                 graund.parent = Graund.transform;
             }
         }
-        
-        
-        //Graund.GetComponent<MeshCombiner>().CombineMeshes(true);
     }
 }

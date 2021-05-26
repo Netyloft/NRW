@@ -148,7 +148,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3990550971469837679}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
@@ -175,6 +175,7 @@ MonoBehaviour:
   StartBulletPos: {fileID: 4718790885096353879}
   LookAtTarget: {fileID: 6159369830837580832}
   Target: {fileID: 0}
+  isShoot: 0
 --- !u!1 &7295825113444143816
 GameObject:
   m_ObjectHideFlags: 0

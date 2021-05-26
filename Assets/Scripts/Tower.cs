@@ -6,36 +6,28 @@ public class Tower : MonoBehaviour
 {
     public string Type;
     public float SpeedFire = 10;
+    public float range = 5;
     public GameObject Bullet;
     public Transform StartBulletPos;
-    public Transform LookAtTarget;
+    //public Transform LookAtTarget;
     public Transform Target;
     public bool isShoot;
 
-    
-    void Start()
+    private void Update()
     {
-        isShoot = false;
+        if (!Target) return;
+        
+        //LookAtTarget.transform.LookAt(Target);
+        if (!isShoot && Vector3.Distance(Target.position, transform.position) <= range)
+            StartCoroutine(Fire());
     }
 
-    void Update()
-    {
-        if (Target)
-        {
-            LookAtTarget.transform.LookAt(Target);
-            if (!isShoot)
-                StartCoroutine(Fire());
-                
-        }
-    }
-
-    IEnumerator Fire()
+    private IEnumerator Fire()
     {
         isShoot = true;
         yield return new WaitForSeconds(SpeedFire);
-        GameObject bullet = GameObject.Instantiate(Bullet, StartBulletPos.position, Quaternion.identity) as GameObject;
+        var bullet = Instantiate(Bullet, StartBulletPos.position, Quaternion.identity);
         bullet.GetComponent<BulletTower>().Target = Target;
-        bullet.GetComponent<BulletTower>().tower = this;
         isShoot = false;
     }
     

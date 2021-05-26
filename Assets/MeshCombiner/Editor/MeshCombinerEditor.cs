@@ -42,7 +42,7 @@ public class MeshCombinerEditor : Editor
 		meshCombiner.DeactivateCombinedChildrenMeshRenderers = GUILayout.Toggle(meshCombiner.DeactivateCombinedChildrenMeshRenderers,
 			"Deactivate Combined Children's MeshRenderers");
 
-		meshCombiner.GenerateUVMap = GUILayout.Toggle(meshCombiner.GenerateUVMap, new GUIContent("Generate UV Map", "It is a slow operation that "+
+		meshCombiner.GenerateUVMap = GUILayout.Toggle(meshCombiner.GenerateUVMap, new GUIContent("Generate UV GameMap", "It is a slow operation that "+
 			"generates a UV map (required for the lightmap).\n\nCan be used only in the Editor."));
 
 		// The last (6) "Destroy Combined Children" Toggle:
