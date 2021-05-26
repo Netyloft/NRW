@@ -2,7 +2,7 @@
 {
     public enum MapObjectType
     {
-        Graund,
+        Ground,
         Tree,
         Stone,
         Iron,

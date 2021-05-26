@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletTower : MonoBehaviour
 {
-    public int Damage = 25;
-    public int Speed = 10;
+    //[SerializeField] private int Damage = 25;
+    [SerializeField] private int Speed = 10;
     public Transform Target;
 
     

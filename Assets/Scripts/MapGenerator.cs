@@ -68,7 +68,7 @@ public class MapGenerator : MonoBehaviour
                     continue;
                 }
                 
-                GameMap.map[i, j] = MapObjectType.Graund;
+                GameMap.map[i, j] = MapObjectType.Ground;
             }
         }
     }
@@ -82,7 +82,7 @@ public class MapGenerator : MonoBehaviour
             var x = Random.Range(0, GameMap.xLen);
             var y = Random.Range(0, GameMap.yLen);
 
-            if (GameMap.map[x, y] != MapObjectType.Graund) continue;
+            if (GameMap.map[x, y] != MapObjectType.Ground) continue;
             
             GameMap.map[x, y] = type;
             cou++;
