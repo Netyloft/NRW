@@ -39,6 +39,7 @@
           <e p="BulletTower.cs" t="Include" />
           <e p="DayAndNightComtroller.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
+          <e p="EnemyCounter.cs" t="Include" />
           <e p="EnemySpawner.cs" t="Include" />
           <e p="GameMap.cs" t="Include" />
           <e p="InterfaceController.cs" t="Include" />

@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     private bool isVisib;
     public IEnumerator Spawn()
     {
-        while (!isVisib)
+        while (!EnemyCounter.counter.IsPossibleSpawnEnemy())
         {
             Instantiate(_enemy, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(2);
@@ -35,16 +35,12 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnBecameVisible()
     {
-        Debug.Log("Видно");
         isVisib = true;
     }
 
     private void OnBecameInvisible()
     {
-        Debug.Log("Не видно");
         isVisib = false;
         StartCoroutine(Spawn());
-        
-        //enabled = true;
     }
 }
