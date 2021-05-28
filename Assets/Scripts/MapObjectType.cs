@@ -2,10 +2,11 @@
 {
     public enum MapObjectType
     {
-        Ground,
+        Graund,
         Tree,
         Stone,
         Iron,
-        Building
+        Building,
+        Spawner
     }
 }

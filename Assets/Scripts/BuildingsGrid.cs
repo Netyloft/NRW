@@ -63,7 +63,7 @@ public class BuildingsGrid : MonoBehaviour
         {
             for (int y = 0; y < flyingBuilding.Size.y; y++)
             {
-                if (GameMap.map[placeX + x, placeY + y] != MapObjectType.Ground) return true;
+                if (GameMap.map[placeX + x, placeY + y] != MapObjectType.Graund) return true;
             }
         }
 

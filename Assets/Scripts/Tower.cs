@@ -1,29 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Tower : MonoBehaviour
+public class Tower : Building
 {
     private const int ENEMY_LAYER_MASK = 1 << 9;
-
     public string Type;
     public float SpeedFire = 10;
-    [Range(1.5f, 10.5f)] public float range = 5.0f;
+    public float range = 5;
     public GameObject Bullet;
     public Transform StartBulletPos;
     //public Transform LookAtTarget;
-    //public Transform Target;
-    public bool isShoot;
-
     private TargetPoint _target;
+    public bool isShoot;
 
     private void Update()
     {
-        if (!isShoot && (IsTargetExists() || IsTargetTracked()))
+        
+        if (!isShoot && (IsTargetTracked() || IsTargetExists()))
             StartCoroutine(Fire());
     }
-
-
 
     private bool IsTargetExists()
     {
@@ -59,5 +54,9 @@ public class Tower : MonoBehaviour
         bullet.GetComponent<BulletTower>().Target = _target;
         isShoot = false;
     }
-    
+
+    protected override void OnBuilt()
+    {
+        isShoot = false;
+    }
 }

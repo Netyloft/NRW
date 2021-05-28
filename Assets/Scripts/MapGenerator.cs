@@ -16,8 +16,7 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField] private int _stoneCountOnMap;
     [SerializeField] private int _ironCountOnMap;
-    
-    
+    [SerializeField] private int _spawnersCountOnMap;
     
     private MapSpawner _spawner;
     
@@ -39,6 +38,7 @@ public class MapGenerator : MonoBehaviour
 
         ArrangeMineObjects(MapObjectType.Stone, _stoneCountOnMap);
         ArrangeMineObjects(MapObjectType.Iron, _ironCountOnMap);
+        ArrangeMineObjects(MapObjectType.Spawner, _spawnersCountOnMap);
         
         _spawner.SpawnMap();
         
@@ -68,7 +68,7 @@ public class MapGenerator : MonoBehaviour
                     continue;
                 }
                 
-                GameMap.map[i, j] = MapObjectType.Ground;
+                GameMap.map[i, j] = MapObjectType.Graund;
             }
         }
     }
@@ -82,7 +82,7 @@ public class MapGenerator : MonoBehaviour
             var x = Random.Range(0, GameMap.xLen);
             var y = Random.Range(0, GameMap.yLen);
 
-            if (GameMap.map[x, y] != MapObjectType.Ground) continue;
+            if (GameMap.map[x, y] != MapObjectType.Graund) continue;
             
             GameMap.map[x, y] = type;
             cou++;
