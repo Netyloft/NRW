@@ -20,8 +20,14 @@ public class Enemy : MonoBehaviour
             _goPoint = GameMap.PositionMainObject;
     }
 
+    public void TakeDamage(int dmg)
+    {
+        _currentHp -= dmg;
+    }
     void Update()
     {
         agent.SetDestination(_goPoint.position);
+        if (_currentHp <= 0)
+            Destroy(gameObject);
     }
 }
