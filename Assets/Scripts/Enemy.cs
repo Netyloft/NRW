@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _maxHp;
     [SerializeField] private int _currentHp;
     [SerializeField] private Transform _goPoint;
+
     
     
     private NavMeshAgent agent;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44450867, g: 0.49400175, b: 0.573298, a: 1}
+  m_IndirectSpecularColor: {r: 0.4445095, g: 0.4940024, b: 0.57329893, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1033,7 +1033,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.4230187, y: -0.26944974, z: 0.1333449, w: 0.8547931}
+  m_LocalRotation: {x: 0.42301872, y: -0.26944977, z: 0.13334489, w: 0.8547931}
   m_LocalPosition: {x: 8.5, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1577,7 +1577,8 @@ GameObject:
   - component: {fileID: 1785394352}
   - component: {fileID: 1785394356}
   - component: {fileID: 1785394357}
-  m_Layer: 0
+  - component: {fileID: 1785394358}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1696,6 +1697,18 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1785394358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785394351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baad6e645a3cf2049b99e49d96d7cfe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1796889569
 GameObject:
   m_ObjectHideFlags: 3
@@ -1852,7 +1865,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933759268}
-  m_LocalRotation: {x: 0.4230187, y: -0.26944974, z: 0.1333449, w: 0.8547931}
+  m_LocalRotation: {x: 0.42301872, y: -0.26944977, z: 0.13334489, w: 0.8547931}
   m_LocalPosition: {x: 8.5, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

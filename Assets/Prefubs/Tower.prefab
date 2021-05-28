@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: Basic
   SpeedFire: 0.5
-  range: 5
+  range: 3
   Bullet: {fileID: 7781754278086710172, guid: 9a97bba8cbd767a4da3ddb9924829c81, type: 3}
   StartBulletPos: {fileID: 4718790885096353879}
   Target: {fileID: 0}

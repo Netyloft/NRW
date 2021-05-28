@@ -6,13 +6,13 @@ public class BulletTower : MonoBehaviour
 {
     //[SerializeField] private int Damage = 25;
     [SerializeField] private int Speed = 10;
-    public Transform Target;
+    public TargetPoint Target;
 
     
     void Update()
     {
         if (Target)
-            transform.position = Vector3.MoveTowards(transform.position, Target.position, Time.deltaTime * Speed);
+            transform.position = Vector3.MoveTowards(transform.position, Target.Position, Time.deltaTime * Speed);
         if (!Target)    
             Destroy(gameObject);
     }

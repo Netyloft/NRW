@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    private const int ENEMY_LAYER_MASK = 1 << 6;
+    private const int ENEMY_LAYER_MASK = 1 << 9;
 
     public string Type;
     public float SpeedFire = 10;
@@ -12,19 +12,18 @@ public class Tower : MonoBehaviour
     public GameObject Bullet;
     public Transform StartBulletPos;
     //public Transform LookAtTarget;
-    public Transform Target;
+    //public Transform Target;
     public bool isShoot;
 
     private TargetPoint _target;
 
     private void Update()
     {
-        if (!Target) return;
-        
-        //LookAtTarget.transform.LookAt(Target);
-        if (!isShoot && Vector3.Distance(Target.position, transform.position) <= range)
+        if (!isShoot && (IsTargetExists() || IsTargetTracked()))
             StartCoroutine(Fire());
     }
+
+
 
     private bool IsTargetExists()
     {
@@ -38,12 +37,26 @@ public class Tower : MonoBehaviour
         return false;
     }
 
+    private bool IsTargetTracked()
+    {
+        if (_target == null)
+            return false;
+        Vector3 selfPosition = transform.localPosition;
+        Vector3 targetPosition = _target.Position;
+        if (Vector3.Distance(selfPosition, targetPosition) > range + _target.ColliderSize)
+        {
+            _target = null;
+            return false;
+        }
+        return true;
+    }
+
     private IEnumerator Fire()
     {
         isShoot = true;
         yield return new WaitForSeconds(SpeedFire);
         var bullet = Instantiate(Bullet, StartBulletPos.position, Quaternion.identity);
-        bullet.GetComponent<BulletTower>().Target = Target;
+        bullet.GetComponent<BulletTower>().Target = _target;
         isShoot = false;
     }
     
