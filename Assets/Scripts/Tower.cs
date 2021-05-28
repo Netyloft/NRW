@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Tower : MonoBehaviour
+public class Tower : Building
 {
     public string Type;
     public float SpeedFire = 10;
@@ -30,5 +29,9 @@ public class Tower : MonoBehaviour
         bullet.GetComponent<BulletTower>().Target = Target;
         isShoot = false;
     }
-    
+
+    protected override void OnBuilt()
+    {
+        isShoot = false;
+    }
 }

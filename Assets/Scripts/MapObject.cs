@@ -7,12 +7,9 @@ public class MapObject : MonoBehaviour
 {
 
     [SerializeField] private int maxHp;
-    
     [SerializeField] private int currentHp;
-    
     [SerializeField] private int maxResources;
     [SerializeField] private int currentResources;
-
     [SerializeField] public MapObjectType type;
     
     private int minedResources;

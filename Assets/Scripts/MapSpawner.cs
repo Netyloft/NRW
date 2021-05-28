@@ -14,6 +14,7 @@ public class MapSpawner : MonoBehaviour
     public GameObject Tree;
     public GameObject Stone;
     public GameObject Irone;
+    public GameObject Spawner;
 
     public void SpawnMap()
     {
@@ -37,6 +38,13 @@ public class MapSpawner : MonoBehaviour
                 {
                     var tree = Instantiate(Irone, new Vector3(i, 0, j), Quaternion.identity).transform;
                     tree.parent = WorldMap.transform;
+                }
+                
+                if (GameMap.map[i, j] == MapObjectType.Spawner)
+                {
+                    var tree = Instantiate(Spawner, new Vector3(i, 0, j), Quaternion.identity).transform;
+                    tree.parent = WorldMap.transform;
+                    continue;
                 }
                 
                 var graund = Instantiate(GraundTile, new Vector3(i, 0, j), Quaternion.identity).transform;

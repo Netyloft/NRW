@@ -16,8 +16,7 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField] private int _stoneCountOnMap;
     [SerializeField] private int _ironCountOnMap;
-    
-    
+    [SerializeField] private int _spawnersCountOnMap;
     
     private MapSpawner _spawner;
     
@@ -39,6 +38,7 @@ public class MapGenerator : MonoBehaviour
 
         ArrangeMineObjects(MapObjectType.Stone, _stoneCountOnMap);
         ArrangeMineObjects(MapObjectType.Iron, _ironCountOnMap);
+        ArrangeMineObjects(MapObjectType.Spawner, _spawnersCountOnMap);
         
         _spawner.SpawnMap();
         

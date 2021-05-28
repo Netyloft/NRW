@@ -6,6 +6,7 @@
         Tree,
         Stone,
         Iron,
-        Building
+        Building,
+        Spawner
     }
 }

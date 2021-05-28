@@ -69,13 +69,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5609857671222908143}
-  - component: {fileID: 6387808922754674665}
   - component: {fileID: 3991933966819558716}
   - component: {fileID: 4471789880107732726}
   - component: {fileID: 7522026561316208393}
   - component: {fileID: 2947014428781526952}
   m_Layer: 0
-  m_Name: Town
+  m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,20 +97,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6387808922754674665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3990550971469837679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f61d0e60dd839b499b94abe757e395a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainRenderer: {fileID: 7728244608860687931}
-  Size: {x: 1, y: 1}
 --- !u!114 &3991933966819558716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +138,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
@@ -169,11 +154,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7ba67904333894581eb2a6870a5dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainRenderer: {fileID: 7728244608860687931}
+  _navMeshObstacle: {fileID: 7522026561316208393}
+  Size: {x: 1, y: 1}
   Type: Basic
   SpeedFire: 0.5
+  range: 5
   Bullet: {fileID: 7781754278086710172, guid: 9a97bba8cbd767a4da3ddb9924829c81, type: 3}
   StartBulletPos: {fileID: 4718790885096353879}
-  LookAtTarget: {fileID: 6159369830837580832}
   Target: {fileID: 0}
   isShoot: 0
 --- !u!1 &7295825113444143816
