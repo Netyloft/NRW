@@ -11,21 +11,20 @@ public class EnemySpawner : MonoBehaviour
 
     private bool isVisib;
 
-    public IEnumerator Spawn()
+    private IEnumerator Spawn()
     {
-        while (WaveController.counter.IsPossibleSpawnEnemy() && !isVisib)
+        while (true)
         {
             var timeSpread = Random.Range(-1.5f, 1.5f);
             yield return new WaitForSeconds(2 + timeSpread);
-            Instantiate(_enemy, transform.position, Quaternion.identity);
+            
+            if(WaveController.counter.IsPossibleSpawnEnemy() && !isVisib)
+                Instantiate(_enemy, transform.position, Quaternion.identity);
         }
     }
 
-    private void StartSpawn()
-    {
-        StartCoroutine(Spawn());
-    }
-
+    private void StartSpawn() => StartCoroutine(Spawn());
+    
     private void OnEnable()
     {
         WaveController.StartWave += StartSpawn;

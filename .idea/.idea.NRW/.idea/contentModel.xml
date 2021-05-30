@@ -47,7 +47,7 @@
           <e p="MapObject.cs" t="Include" />
           <e p="MapObjectType.cs" t="Include" />
           <e p="MapSpawner.cs" t="Include" />
-          <e p="MineMapObject.cs" t="Include" />
+          <e p="MinedObject.cs" t="Include" />
           <e p="NavMeshBakingDish.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="ResourseCounter.cs" t="Include" />

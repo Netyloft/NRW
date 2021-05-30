@@ -107,8 +107,8 @@ GameObject:
   - component: {fileID: 9007058026718206372}
   - component: {fileID: 7009119894150724381}
   - component: {fileID: 881677196799863275}
-  - component: {fileID: -8971623563262293094}
-  m_Layer: 6
+  - component: {fileID: 6897906210064403365}
+  m_Layer: 7
   m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!114 &-8971623563262293094
+--- !u!114 &6897906210064403365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8625711743989891870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e12a6670b807fa0458b73b2379d7576c, type: 3}
+  m_Script: {fileID: 11500000, guid: 999bf6d23e9037449957cf34a89fabae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100

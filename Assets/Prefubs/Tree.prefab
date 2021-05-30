@@ -108,8 +108,8 @@ GameObject:
   - component: {fileID: 6545096702382854362}
   - component: {fileID: 4992716287959458405}
   - component: {fileID: 7095034744774999031}
-  - component: {fileID: 8585661773329561386}
-  m_Layer: 6
+  - component: {fileID: 1911918919819755303}
+  m_Layer: 7
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!114 &8585661773329561386
+--- !u!114 &1911918919819755303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,10 +170,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5881431086145997408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e12a6670b807fa0458b73b2379d7576c, type: 3}
+  m_Script: {fileID: 11500000, guid: 999bf6d23e9037449957cf34a89fabae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 100
   currentHp: 0
   maxResources: 100
   currentResources: 0

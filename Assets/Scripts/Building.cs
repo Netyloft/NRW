@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class Building : MonoBehaviour
+public abstract class Building : MapObject
 {
     public Renderer MainRenderer;
     public NavMeshObstacle _navMeshObstacle;

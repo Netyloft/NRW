@@ -7,13 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     private Camera mainCamera;
     private NavMeshAgent agent;
-    void Start()
+
+    private void Start()
     {
         mainCamera = Camera.main;
         agent = GetComponent<NavMeshAgent>();
     }
-    
-    void Update()
+
+    private void Update()
     {
         if (Input.GetMouseButtonDown(1))
         {
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
                 var h = hit.transform.gameObject;
                 
 
-                var g = h.GetComponent<MapObject>();
+                var g = h.GetComponent<MinedObject>();
 
                 if (g != null)
                 {
@@ -32,9 +33,6 @@ public class PlayerController : MonoBehaviour
                         g.Mine(15);
                         return;
                     }
-                        
-
-                    
                 }
                 
                 agent.SetDestination(hit.point);

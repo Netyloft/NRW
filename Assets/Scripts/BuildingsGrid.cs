@@ -25,7 +25,7 @@ public class BuildingsGrid : MonoBehaviour
     {
         if (flyingBuilding == null) return;
         
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
         {
             Destroy(flyingBuilding.gameObject);
         }
