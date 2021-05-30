@@ -14,6 +14,7 @@ public class BulletTower : MonoBehaviour
         { 
             transform.position = Vector3.MoveTowards(transform.position, Target.Position, Time.deltaTime * Speed);
         }
+        
         if (!Target)    
             Destroy(gameObject);
     }
