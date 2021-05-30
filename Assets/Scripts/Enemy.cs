@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         agent.SetDestination(_goPoint.position);
+        if (_currentHp <= 0)
+            Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)

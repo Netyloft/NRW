@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 828553129328979147}
   - component: {fileID: 8690580132097153876}
   - component: {fileID: 6792401834841065267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6de631c23bae894084ec56913aa4bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 0}
   Damage: 25
   Speed: 10
   Target: {fileID: 0}

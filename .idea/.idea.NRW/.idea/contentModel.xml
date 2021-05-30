@@ -52,6 +52,7 @@
           <e p="NavMeshBakingDish.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="ResourseCounter.cs" t="Include" />
+          <e p="TargetPoint.cs" t="Include" />
           <e p="Tower.cs" t="Include" />
           <e p="TowerTrigger.cs" t="Include" />
         </e>

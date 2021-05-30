@@ -21,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
     private void StartSpawn()
     {
         StartCoroutine(Spawn());
+        StartCoroutine(Spawn());
     }
 
     private void OnEnable()
@@ -35,11 +36,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnBecameVisible()
     {
+        Debug.Log("Видно");
         isVisib = true;
     }
 
     private void OnBecameInvisible()
     {
+        Debug.Log("Не видно");
         isVisib = false;
         StartCoroutine(Spawn());
     }
