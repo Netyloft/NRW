@@ -82,6 +82,6 @@ public class BuildingsGrid : MonoBehaviour
         
         flyingBuilding.SetNormal();
         flyingBuilding = null;
-        //MapController.instance.Build();
+        
     }
 }

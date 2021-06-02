@@ -93,6 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7ba67904333894581eb2a6870a5dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 0
+  currentHp: 0
+  _woodCost: 10
+  _stoneCost: 10
+  _ironCost: 10
   MainRenderer: {fileID: 7728244608860687931}
   _navMeshObstacle: {fileID: 7522026561316208393}
   Size: {x: 1, y: 1}
@@ -101,7 +106,6 @@ MonoBehaviour:
   range: 5
   Bullet: {fileID: 7781754278086710172, guid: 9a97bba8cbd767a4da3ddb9924829c81, type: 3}
   StartBulletPos: {fileID: 4718790885096353879}
-  Target: {fileID: 0}
   isShoot: 0
 --- !u!1 &7295825113444143816
 GameObject:

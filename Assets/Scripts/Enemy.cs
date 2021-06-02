@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
             var h = hit.transform.gameObject;
             var g = h.GetComponent<MapObject>();
             
-            if(g != null)
+            if(g != null && hit.distance <= 1.1f)
                 g.TakeDamage(10000);
         }
     }
