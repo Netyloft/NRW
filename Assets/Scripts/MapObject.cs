@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MapObject : MonoBehaviour
 {
-
     [SerializeField] private int maxHp;
     [SerializeField] private int currentHp;
     
@@ -27,6 +26,7 @@ public class MapObject : MonoBehaviour
     
     protected void TakeAway()
     {
+        GameMap.map[(int) transform.position.x, (int) transform.position.z] = MapObjectType.Graund;
         gameObject.SetActive(false);
         NavMeshBakingDish.BakingDish.Baking();
         Destroy(gameObject);
