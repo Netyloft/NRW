@@ -48,6 +48,7 @@ public class WaveController : MonoBehaviour
 
     private void StartNextWave()
     {
+        
         if (isFirst) enemyOnWave -= numberOfAddedEnemies;
         
         enemyOnWave += numberOfAddedEnemies;
@@ -56,12 +57,12 @@ public class WaveController : MonoBehaviour
         waveCount++;
         isFirst = false;
         
+        Debug.Log($"Началась {waveCount} волна");
         StartWave?.Invoke();
     }
 
     private void FirstWave()
     {
-        Debug.Log("Началась первая волна");
         isMainBuildet = true;
         Invoke("StartNextWave", startTimeOfTheFirstWave);
     }

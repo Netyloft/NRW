@@ -745,9 +745,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930d1d9643b970e4483c34959981b24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoodCount: 0
-  StoneCount: 0
-  IronCount: 0
+  WoodCount: 1000
+  StoneCount: 1000
+  IronCount: 1000
 --- !u!114 &731902105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2126,11 +2126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7e4648c59a5494d86d1df8526976e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _size: {x: 50, y: 50}
+  _size: {x: 250, y: 250}
   _offset: {x: 2.12, y: 1.84}
   _zoom: 5.25
   _seed: 0
-  _intencity: 0.44
+  _intencity: 0.4
   _stoneCountOnMap: 20
   _ironCountOnMap: 20
   _spawnersCountOnMap: 10
