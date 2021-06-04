@@ -36,14 +36,16 @@ public abstract class Building : MapObject
         OnBuilt();
     }
 
-    private void SubtractResources()
+    public bool IsCanSubtractResources()
     {
         if (!ResourseCounter.counter.CheckResourceAvailability(_woodCost, _stoneCost, _ironCost))
-        {
-            Destroy(gameObject);
-            return;
-        }
-        
+            return false;
+
+        return true;
+    }
+    
+    private void SubtractResources()
+    {
         ResourseCounter.counter.ChangeResource(MapObjectType.Tree, -_woodCost);
         ResourseCounter.counter.ChangeResource(MapObjectType.Stone, -_stoneCost);
         ResourseCounter.counter.ChangeResource(MapObjectType.Iron, -_ironCost);

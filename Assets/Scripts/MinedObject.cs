@@ -8,7 +8,7 @@ public class MinedObject : MapObject
     [SerializeField] private int maxResources;
     [SerializeField] private int currentResources;
     [SerializeField] public MapObjectType type;
-    // Start is called before the first frame update
+    
     void Start()
     {
         currentResources = maxResources;

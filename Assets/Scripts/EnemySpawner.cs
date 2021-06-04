@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
             var timeSpread = Random.Range(-1.5f, 1.5f);
             yield return new WaitForSeconds(2 + timeSpread);
             
-            if(WaveController.counter.IsPossibleSpawnEnemy() && !isVisib)
+            if(WaveController.counter.IsPossibleSpawnEnemy() && !isVisib && Vector3.Distance(transform.position, GameMap.PositionMainObject.position) > 8f)
                 Instantiate(_enemy, transform.position, Quaternion.identity);
         }
     }
