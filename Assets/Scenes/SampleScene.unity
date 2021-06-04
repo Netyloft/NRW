@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44450867, g: 0.49400175, b: 0.573298, a: 1}
+  m_IndirectSpecularColor: {r: 0.4445095, g: 0.4940024, b: 0.57329893, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2107,7 +2107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7e4648c59a5494d86d1df8526976e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   _size: {x: 50, y: 50}
+=======
+  _size: {x: 30, y: 30}
+>>>>>>> Stashed changes
   _offset: {x: 2.12, y: 1.84}
   _zoom: 5.25
   _seed: 0
