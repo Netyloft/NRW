@@ -15,7 +15,6 @@ public class Tower : Building
 
     private void Update()
     {
-        
         if (!isShoot && (IsTargetTracked() || IsTargetExists()))
             StartCoroutine(Fire());
     }
