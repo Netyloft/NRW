@@ -25,6 +25,13 @@ public class ResourseCounter : MonoBehaviour
         Change?.Invoke(WoodCount, StoneCount, IronCount);
     }
 
+    public bool CheckResourceAvailability(int wood, int stone, int iron)
+    {
+        if (WoodCount < wood || StoneCount < stone || IronCount < iron) return false;
+        
+        return true;
+    }
+
     public void ChangeResource(MapObjectType type, int count)
     {
         switch (type)

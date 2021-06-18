@@ -4,17 +4,16 @@ using UnityEngine;
 public class Tower : Building
 {
     private const int ENEMY_LAYER_MASK = 1 << 9;
-    public string Type;
     public float SpeedFire = 10;
     public float range = 5;
     public GameObject Bullet;
     public Transform StartBulletPos;
-    //public Transform LookAtTarget;
     private TargetPoint _target;
     public bool isShoot;
 
     private void Update()
     {
+        
         if (!isShoot && (IsTargetTracked() || IsTargetExists()))
             StartCoroutine(Fire());
     }

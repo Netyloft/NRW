@@ -1,9 +1,16 @@
 ﻿using System;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class Building : MonoBehaviour
+public abstract class Building : MapObject
 {
+    [Header("Cost Info")] 
+    [SerializeField] private int _woodCost;
+    [SerializeField] private int _stoneCost;
+    [SerializeField] private int _ironCost;
+    [Space(15f)]
+    
     public Renderer MainRenderer;
     public NavMeshObstacle _navMeshObstacle;
     
@@ -25,7 +32,23 @@ public abstract class Building : MonoBehaviour
     {
         MainRenderer.material.color = Color.white;
         _navMeshObstacle.enabled = true;
+        SubtractResources();
         OnBuilt();
+    }
+
+    public bool IsCanSubtractResources()
+    {
+        if (!ResourseCounter.counter.CheckResourceAvailability(_woodCost, _stoneCost, _ironCost))
+            return false;
+
+        return true;
+    }
+    
+    private void SubtractResources()
+    {
+        ResourseCounter.counter.ChangeResource(MapObjectType.Tree, -_woodCost);
+        ResourseCounter.counter.ChangeResource(MapObjectType.Stone, -_stoneCost);
+        ResourseCounter.counter.ChangeResource(MapObjectType.Iron, -_ironCost);
     }
 
     protected abstract void OnBuilt();

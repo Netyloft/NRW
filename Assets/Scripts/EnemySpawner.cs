@@ -2,49 +2,47 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Enemy _enemy;
 
     private bool isVisib;
-    public IEnumerator Spawn()
+
+    private IEnumerator Spawn()
     {
-        while (!isVisib)
+        while (true)
         {
-            Instantiate(_enemy, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(2);
+            var timeSpread = Random.Range(-1.5f, 1.5f);
+            yield return new WaitForSeconds(2 + timeSpread);
+            
+            if(WaveController.counter.IsPossibleSpawnEnemy() && !isVisib && Vector3.Distance(transform.position, GameMap.PositionMainObject.position) > 8f)
+                Instantiate(_enemy, transform.position, Quaternion.identity);
         }
-        
     }
 
-    private void StartSpawn()
-    {
-        StartCoroutine(Spawn());
-    }
-
+    private void StartSpawn() => StartCoroutine(Spawn());
+    
     private void OnEnable()
     {
-        MainObject.OnStart += StartSpawn;
+        WaveController.StartWave += StartSpawn;
     }
 
     private void OnDisable()
     {
-        MainObject.OnStart -= StartSpawn;
+        WaveController.StartWave += StartSpawn;
     }
 
     private void OnBecameVisible()
     {
-        Debug.Log("Видно");
         isVisib = true;
     }
 
     private void OnBecameInvisible()
     {
-        Debug.Log("Не видно");
         isVisib = false;
         StartCoroutine(Spawn());
-        
-        //enabled = true;
     }
 }

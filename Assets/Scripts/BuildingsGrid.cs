@@ -25,7 +25,7 @@ public class BuildingsGrid : MonoBehaviour
     {
         if (flyingBuilding == null) return;
         
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1) || !flyingBuilding.IsCanSubtractResources())
         {
             Destroy(flyingBuilding.gameObject);
         }
@@ -82,6 +82,6 @@ public class BuildingsGrid : MonoBehaviour
         
         flyingBuilding.SetNormal();
         flyingBuilding = null;
-        //MapController.instance.Build();
+        
     }
 }

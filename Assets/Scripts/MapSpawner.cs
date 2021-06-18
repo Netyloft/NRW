@@ -2,19 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MapSpawner : MonoBehaviour
 {
     public GameObject WorldMap;
     public GameObject Graund;
-    
+
     public GameObject GraundTile;
-    
-    public GameObject Tree;
-    public GameObject Stone;
-    public GameObject Irone;
-    public GameObject Spawner;
+
+    public MapObject Tree;
+    public MapObject Stone;
+    public MapObject Irone;
+    public MapObject Spawner;
 
     public void SpawnMap()
     {
@@ -22,33 +23,21 @@ public class MapSpawner : MonoBehaviour
         {
             for (var j = 0; j < GameMap.yLen; j++)
             {
-                if (GameMap.map[i, j] == MapObjectType.Tree)
+                var mapObject = GameMap.map[i, j] switch
                 {
-                    var tree = Instantiate(Tree, new Vector3(i, 0, j), Quaternion.identity).transform;
-                    tree.parent = WorldMap.transform;
-                }
+                    MapObjectType.Tree => Instantiate(Tree, new Vector3(i, 0, j), Quaternion.identity),
+                    MapObjectType.Stone => Instantiate(Stone, new Vector3(i, 0, j), Quaternion.identity),
+                    MapObjectType.Iron => Instantiate(Irone, new Vector3(i, 0, j), Quaternion.identity),
+                    MapObjectType.Spawner => Instantiate(Spawner, new Vector3(i, 0, j), Quaternion.identity),
+                    _ => null
+                };
+
+                if (mapObject != null)
+                    mapObject.transform.parent = WorldMap.transform;
                 
-                if (GameMap.map[i, j] == MapObjectType.Stone)
-                {
-                    var tree = Instantiate(Stone, new Vector3(i, 0, j), Quaternion.identity).transform;
-                    tree.parent = WorldMap.transform;
-                }
                 
-                if (GameMap.map[i, j] == MapObjectType.Iron)
-                {
-                    var tree = Instantiate(Irone, new Vector3(i, 0, j), Quaternion.identity).transform;
-                    tree.parent = WorldMap.transform;
-                }
-                
-                if (GameMap.map[i, j] == MapObjectType.Spawner)
-                {
-                    var tree = Instantiate(Spawner, new Vector3(i, 0, j), Quaternion.identity).transform;
-                    tree.parent = WorldMap.transform;
-                    continue;
-                }
-                
-                var graund = Instantiate(GraundTile, new Vector3(i, 0, j), Quaternion.identity).transform;
-                graund.parent = Graund.transform;
+                var ground = Instantiate(GraundTile, new Vector3(i, 0, j), Quaternion.identity).transform;
+                ground.parent = Graund.transform;
             }
         }
     }
