@@ -26,9 +26,8 @@ public class MapObject : MonoBehaviour
             TakeAway();
     }
     
-    protected void TakeAway()
+    protected virtual void TakeAway()
     {
-        Debug.Log("Вызывает");
         GameMap.map[(int) transform.position.x, (int) transform.position.z] = MapObjectType.Graund;
         gameObject.SetActive(false);
         //OnTakeAway?.BeginInvoke(null, null);

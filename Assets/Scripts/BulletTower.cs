@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletTower : MonoBehaviour
 {
-    public int Damage = 25;
+    public float Damage = 35f;
     public int Speed = 10;
     public TargetPoint Target;
     

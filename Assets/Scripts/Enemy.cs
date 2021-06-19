@@ -1,13 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
+
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int _maxHp;
-    [SerializeField] private int _currentHp;
+    [SerializeField] private float _maxHp;
+    [SerializeField] private float _currentHp;
     [SerializeField] private Transform _goPoint;
     [SerializeField] private HealthBar _healthBar;
 
@@ -104,7 +107,7 @@ public class Enemy : MonoBehaviour
         }
     }
     
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         _currentHp -= damage;
         _healthBar.SetHealth(_currentHp);
@@ -115,6 +118,9 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        ResourseCounter.counter.ChangeResource(MapObjectType.Tree, Random.Range(0,16));
+        ResourseCounter.counter.ChangeResource(MapObjectType.Stone, Random.Range(0,16));
+        ResourseCounter.counter.ChangeResource(MapObjectType.Iron, Random.Range(0,16));
         WasDie?.Invoke();
         Destroy(gameObject);
     }
