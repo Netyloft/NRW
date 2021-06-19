@@ -9,13 +9,16 @@ public class WaveController : MonoBehaviour
     
     [Header("Wave Info")]
     [SerializeField] private int waveCount;
+    public int WaveCount => waveCount;
+
     [SerializeField] private int enemyOnWave;
     [SerializeField] private int spawnedEnemy;
     [SerializeField] private int aliveEnemy;
-    
-    [Space(15f)]
     [SerializeField] private int numberOfAddedEnemies;
-    [SerializeField] private float startTimeOfTheFirstWave;
+    [Space(15f)]
+    
+
+    private float startTimeOfTheFirstWave;
 
     public delegate void NextWave();
     public static event NextWave StartWave;
@@ -50,7 +53,7 @@ public class WaveController : MonoBehaviour
     {
         
         if (isFirst) enemyOnWave -= numberOfAddedEnemies;
-        
+
         enemyOnWave += numberOfAddedEnemies;
         spawnedEnemy = 0;
         aliveEnemy = 0;

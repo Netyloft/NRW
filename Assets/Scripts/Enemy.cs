@@ -9,22 +9,20 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _maxHp;
     [SerializeField] private int _currentHp;
     [SerializeField] private Transform _goPoint;
-
     [SerializeField] private HealthBar _healthBar;
 
     public delegate void OnChangedState();
-
     public static event OnChangedState WasBorn;
     public static event OnChangedState WasDie;
 
     private Vector3 oldPosition;
-
     private NavMeshAgent agent;
 
-    void Start()
+    private int waveCount => WaveController.counter.WaveCount;
+    private void Start()
     {
-        _currentHp = _maxHp;
-        _healthBar.SetMaxHealth(_maxHp);
+        AdjustingStats();
+        
         agent = GetComponent<NavMeshAgent>();
         oldPosition = transform.position;
 
@@ -33,8 +31,14 @@ public class Enemy : MonoBehaviour
             _goPoint = GameMap.PositionMainObject;
 
         agent.SetDestination(_goPoint.position);
-
         StartCoroutine(Chek());
+    }
+
+    private void AdjustingStats()
+    {
+        _maxHp = 35 * waveCount / 3 + 15 * waveCount / 11 + 4;
+        _currentHp = _maxHp;
+        _healthBar.SetMaxHealth(_maxHp);
     }
 
     private void FixedUpdate()
@@ -96,9 +100,7 @@ public class Enemy : MonoBehaviour
             if (g != null && hit.distance <= 1.5f)
             {
                 g.TakeDamage(10000);
-                return;
             }
-                
         }
     }
     

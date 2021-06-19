@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnDisable()
     {
-        WaveController.StartWave += StartSpawn;
+        WaveController.StartWave -= StartSpawn;
     }
 
     private void OnBecameVisible()

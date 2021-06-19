@@ -761,11 +761,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveCount: 0
-  enemyOnWave: 1
+  enemyOnWave: 2
   spawnedEnemy: 0
   aliveEnemy: 0
-  numberOfAddedEnemies: 5
-  startTimeOfTheFirstWave: 0
+  numberOfAddedEnemies: 3
 --- !u!1 &742741351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1370,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.083333336
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
 --- !u!114 &1192022008
@@ -2130,7 +2129,7 @@ MonoBehaviour:
   _offset: {x: 2.12, y: 1.84}
   _zoom: 5.25
   _seed: 0
-  _intencity: 0.4
+  _intencity: 0.42
   _stoneCountOnMap: 20
   _ironCountOnMap: 20
   _spawnersCountOnMap: 10
@@ -2163,10 +2162,10 @@ MonoBehaviour:
   WorldMap: {fileID: 1192022001}
   Graund: {fileID: 1093468318}
   GraundTile: {fileID: 8594176219795579021, guid: ac98e4aa5926ada41bd227fa0346fbae, type: 3}
-  Tree: {fileID: 5881431086145997408, guid: 034c379099607f845b8c18c4adfbd7d3, type: 3}
-  Stone: {fileID: 8625711743989891870, guid: 6503f28d6a81c344aa81bbb5efa08af1, type: 3}
-  Irone: {fileID: 6678179149206295241, guid: 60afc6ed40ba8614f87021a8c5fde144, type: 3}
-  Spawner: {fileID: 8594176219795579021, guid: a0ef6a4757dfed040a23edc2f522d104, type: 3}
+  Tree: {fileID: 1911918919819755303, guid: 034c379099607f845b8c18c4adfbd7d3, type: 3}
+  Stone: {fileID: 6897906210064403365, guid: 6503f28d6a81c344aa81bbb5efa08af1, type: 3}
+  Irone: {fileID: -8202948358405436667, guid: 60afc6ed40ba8614f87021a8c5fde144, type: 3}
+  Spawner: {fileID: 1283861459982842988, guid: a0ef6a4757dfed040a23edc2f522d104, type: 3}
 --- !u!114 &1987140682
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
@@ -7,7 +8,8 @@ public class MapObject : MonoBehaviour
 {
     [SerializeField] private int maxHp;
     [SerializeField] private int currentHp;
-    
+
+    public static event Action OnTakeAway;
     
     private int minedResources;
     
@@ -26,9 +28,11 @@ public class MapObject : MonoBehaviour
     
     protected void TakeAway()
     {
+        Debug.Log("Вызывает");
         GameMap.map[(int) transform.position.x, (int) transform.position.z] = MapObjectType.Graund;
         gameObject.SetActive(false);
-        NavMeshBakingDish.BakingDish.Baking();
+        //OnTakeAway?.BeginInvoke(null, null);
+        NavMeshBakingDish.BakingDish.Updating();
         Destroy(gameObject);
     }
 }

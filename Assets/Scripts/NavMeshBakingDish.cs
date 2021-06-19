@@ -19,4 +19,19 @@ public class NavMeshBakingDish : MonoBehaviour
     {
         _navMeshSurface.BuildNavMesh();
     }
+    
+    public void Updating()
+    {
+        _navMeshSurface.UpdateNavMesh(_navMeshSurface.navMeshData);
+    }
+
+    private void OnEnable()
+    {
+        MapObject.OnTakeAway += Baking;
+    }
+    
+    private void OnDisable()
+    {
+        MapObject.OnTakeAway -= Baking;
+    }
 }
